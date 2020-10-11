@@ -61,14 +61,21 @@
     <a href="#"><b>clicando aqui</b></a></a></p>
     </div>
     </section>
-
     
     <section class="second-section">
-        <button class="second-section__accordion">Section 1</button>
-            <div class="second-section__accordion__panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+        <?php 
+            include './util/buscaDados.php';
+            foreach($dados as $dado){
+        ?>
+                <button class="second-section__accordion"><?php echo($dado['titulo']) ?></ht></button>
+                    <div class="second-section__accordion__panel">
+                        <p><?php echo($dado['descricao']) ?></p>
+                    </div>       
+        <?php
+            }
+        ?>
     </section>
+
 
     <footer></footer>
 
