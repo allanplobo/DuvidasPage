@@ -149,11 +149,11 @@ button {
     height: auto;
     padding: 41px;
     box-sizing: border-box;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(213, 213, 213);
 }
 
 .second-section__accordion {
-    background-color: #eee;
+    background-color: transparent;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -165,14 +165,25 @@ button {
     transition: 0.4s;
 }
 
-.accordion_active,
-.accordion:hover {
-    background-color: #ccc;
+.second-section__accordion hr {
+    background-color: rgb(213, 213, 213);
+}
+
+.second-section__accordion p {
+    color: rgb(130, 81, 179);
+    float: left;
+    margin-right: 20px;
+}
+
+.second-section__accordion img {
+    width: 20px;
+    float: right;
+    margin-left: 20px;
 }
 
 .second-section__accordion__panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: transparent;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -222,7 +233,7 @@ footer {
         flex-direction: column;
     }
     .topbar__menu-mobile__hidden-menu a:hover {
-        background-color: rgb(124, 60, 108);
+        background-color: rgb(102, 64, 141);
     }
     .topbar__menu-mobile a {
         text-transform: uppercase;

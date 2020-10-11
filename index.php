@@ -67,7 +67,13 @@
             include './util/buscaDados.php';
             foreach($dados as $dado){
         ?>
-                <button class="second-section__accordion"><?php echo($dado['titulo']) ?></ht></button>
+                <button class="second-section__accordion">
+                    <p>
+                        <b><?php echo($dado['titulo']) ?></b>
+                    </p>
+                    <img src="assets/icons/seta.png" alt="">
+                    <hr>
+                </button>
                     <div class="second-section__accordion__panel">
                         <p><?php echo($dado['descricao']) ?></p>
                     </div>       
