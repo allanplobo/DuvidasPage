@@ -16,11 +16,11 @@
                     <img src="assets/icons/editar.png"></img>
                     Seja um franqueado
                 </button>
-                <button style="background-color: rgb(82, 36, 70)">
+                <button style="background-color: rgb(83, 55, 111)">
                     <img src="assets/icons/seja_consultor.png"></img>
                     Seja um Consultor(A)
                 </button>
-                <button style="background-color: rgb(49, 214, 255)">
+                <button style="background-color: rgb(37, 164, 196)">
                     Quero Comprar
                 </button>
             </div>
@@ -32,17 +32,14 @@
                 <rect y="25" width="100" height="15"></rect>
                 <rect y="50" width="100" height="15"></rect>
             </svg>
-                <div class="topbar__menu-mobile__hidden-menu">
-                    <a>
-                        <img src="assets/icons/editar.png"></img>
+                <div id="menuMobile" class="topbar__menu-mobile__hidden-menu">
+                    <a href="#">
                         Seja um Franqueado
                     </a>
-                    <a>
-                        <img src="assets/icons/editar.png"></img>
+                    <a href="#">
                         Seja um Consultor
                     </a>
-                    <a>
-                        <img src="assets/icons/editar.png"></img>
+                    <a href="#">
                         Quero Comprar
                     </a>
                 </div>
@@ -65,9 +62,17 @@
     </div>
     </section>
 
-    <section class="second-section"></section>
+    
+    <section class="second-section">
+        <button class="second-section__accordion">Section 1</button>
+            <div class="second-section__accordion__panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+    </section>
 
     <footer></footer>
+
+    <script src="assets/js/index.js"></script>
 
 </body>
 

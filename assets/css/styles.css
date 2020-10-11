@@ -28,7 +28,6 @@ button {
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: transparent;
 }
 
 .topbar__menu-mobile {
@@ -42,7 +41,7 @@ button {
     border-bottom-right-radius: 50px 20px;
     width: 600px;
     height: 50px;
-    background-color: rgb(163, 79, 142);
+    background-color: rgb(130, 81, 179);
 }
 
 .topbar__menu {
@@ -80,6 +79,23 @@ button {
 
 .topbar__menu__left-buttons {
     display: flex;
+}
+
+.topbar__menu-mobile__hidden-menu {
+    display: none;
+    border-radius: 8px;
+    margin-top: -6px;
+    background-color: rgb(130, 81, 179);
+    position: absolute;
+    overflow: hidden;
+    max-height: 0px;
+    transition: height 1s ease-out;
+}
+
+.menu-mobile-opened {
+    width: 210px;
+    max-height: 115px;
+    display: block;
 }
 
 .topbar__menu__right-button {
@@ -124,14 +140,42 @@ button {
 }
 
 .first-section__content a {
-    color: rgb(163, 79, 142);
+    color: rgb(130, 81, 179);
     width: 37vw;
 }
 
 .second-section {
     width: 100%;
     height: 600px;
-    background-color: grey;
+    padding: 41px;
+    box-sizing: border-box;
+    background-color: rgb(202, 202, 202);
+}
+
+.second-section__accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion_active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.second-section__accordion__panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 footer {
@@ -164,20 +208,21 @@ footer {
         position: relative;
     }
     .topbar__menu-mobile svg {
+        cursor: pointer;
         margin-top: 13px;
         margin-left: 30px;
         fill: white;
     }
-    .topbar__menu-mobile__hidden-menu {
-        display: none;
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: -6px;
-        background-color: red;
-        position: absolute;
-    }
-    .topbar__menu-mobile__opened-menu {
+    .topbar__menu-mobile__hidden-menu a {
+        text-align: left;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
         display: flex;
+        flex-direction: column;
+    }
+    .topbar__menu-mobile__hidden-menu a:hover {
+        background-color: rgb(124, 60, 108);
     }
     .topbar__menu-mobile a {
         text-transform: uppercase;
@@ -190,6 +235,7 @@ footer {
     .first-section__content p {
         width: auto;
         color: white;
+        text-shadow: 1px 1px #949494
     }
 }
 
