@@ -24,17 +24,44 @@
                     Quero Comprar
                 </button>
             </div>
+        </nav>
+
+        <nav class="topbar__menu-mobile">
+            <svg viewBox="0 0 100 80" width="40" height="40" onclick="showMenu()">
+                <rect width="100" height="15"></rect>
+                <rect y="25" width="100" height="15"></rect>
+                <rect y="50" width="100" height="15"></rect>
+            </svg>
+                <div class="topbar__menu-mobile__hidden-menu">
+                    <a>
+                        <img src="assets/icons/editar.png"></img>
+                        Seja um Franqueado
+                    </a>
+                    <a>
+                        <img src="assets/icons/editar.png"></img>
+                        Seja um Consultor
+                    </a>
+                    <a>
+                        <img src="assets/icons/editar.png"></img>
+                        Quero Comprar
+                    </a>
+                </div>
+            </nav>
             <button class="topbar__menu__right-button">
                 <img src="assets/icons/area_restrita.png"></img>
                 Área restrita
             </button>
-        </nav>
     </header>
 
     <section class="first-section">
     <div class="first-section__content">
     <h1>Dúvidas</h1>
-    <p><b>Listamos aqui algumas dúvidas frequentes,</b> caso a sua dúvida não esteja aqui você pode entrar em contato conosco <a href="#">clicando aqui</a></a></p>
+    <p><b>Listamos aqui algumas dúvidas frequentes,</b> 
+    <br>
+    caso a sua dúvida não esteja aqui você pode
+    <br> 
+    entrar em contato conosco 
+    <a href="#"><b>clicando aqui</b></a></a></p>
     </div>
     </section>
 
