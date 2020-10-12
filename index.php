@@ -51,15 +51,15 @@
     </header>
 
     <section class="first-section">
-    <div class="first-section__content">
-    <h1>Dúvidas</h1>
-    <p><b>Listamos aqui algumas dúvidas frequentes,</b> 
-    <br>
-    caso a sua dúvida não esteja aqui você pode
-    <br> 
-    entrar em contato conosco 
-    <a href="#"><b>clicando aqui</b></a></a></p>
-    </div>
+        <div class="first-section__content">
+            <h1>Dúvidas</h1>
+            <p><b>Listamos aqui algumas dúvidas frequentes,</b> 
+            <br>
+            caso a sua dúvida não esteja aqui você pode
+            <br> 
+            entrar em contato conosco 
+            <a href="#"><b>clicando aqui</b></a></a></p>
+        </div>
     </section>
     
     <section class="second-section">
@@ -71,7 +71,7 @@
                     <p>
                         <b><?php echo($dado['titulo']) ?></b>
                     </p>
-                    <img src="assets/icons/seta.png" alt="">
+                    <img id="arrowAccordion" class="second-section__accordion__arrow" src="assets/icons/seta.png" alt="arrow">
                     <hr>
                 </button>
                     <div class="second-section__accordion__panel">

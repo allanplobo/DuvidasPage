@@ -25,6 +25,7 @@ button {
     z-index: 1;
     position: fixed;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 50px;
@@ -42,22 +43,37 @@ button {
     width: 600px;
     height: 50px;
     background-color: rgb(130, 81, 179);
+    animation-name: top-before-animation-on-load;
+    animation-duration: 2s;
+}
+
+@keyframes top-before-animation-on-load {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 600px;
+    }
 }
 
 .topbar__menu {
-    display: flex;
-    justify-content: space-between;
     width: 69.5%;
     padding: 0px 50px 0px 50px;
 }
 
-.topbar__menu__right-button img {
+.topbar__menu__right-button img,
+.topbar__menu__left-buttons button img {
     width: 15px;
     height: 20px;
     margin-right: 6px;
 }
 
-.topbar__menu__left-buttons button {
+.topbar__menu__left-buttons {
+    display: flex;
+}
+
+.topbar__menu__left-buttons button,
+.topbar__menu__right-button {
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -69,47 +85,72 @@ button {
     border-radius: 10px;
     border: none;
     background-color: #cf9528;
-}
-
-.topbar__menu__left-buttons button img {
-    width: 15px;
-    height: 20px;
-    margin-right: 6px;
-}
-
-.topbar__menu__left-buttons {
-    display: flex;
+    animation-name: animation-on-load;
+    animation-duration: 3s;
 }
 
 .topbar__menu-mobile__hidden-menu {
-    display: none;
     border-radius: 8px;
-    margin-top: -6px;
+    margin-top: -7px;
     background-color: rgb(130, 81, 179);
     position: absolute;
     overflow: hidden;
-    max-height: 0px;
-    transition: height 1s ease-out;
+    width: 210px;
+    height: 0px;
+    transition: height 0.5s;
 }
 
 .menu-mobile-opened {
-    width: 210px;
-    max-height: 115px;
     display: block;
+    height: 115px;
+}
+
+.topbar__menu-mobile svg {
+    cursor: pointer;
+    margin-top: 13px;
+    margin-left: 30px;
+    fill: white;
+}
+
+.topbar__menu-mobile__hidden-menu a {
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar__menu-mobile__hidden-menu a:hover {
+    background-color: rgb(102, 64, 141);
+}
+
+.topbar__menu-mobile a {
+    text-transform: uppercase;
 }
 
 .topbar__menu__right-button {
     background-color: rgb(216, 155, 41);
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    color: white;
-    width: auto;
-    height: 32px;
-    padding: 18px;
-    margin-right: 20px;
-    border-radius: 10px;
-    border: none;
+}
+
+.topbar__menu__right-button:hover,
+.topbar__menu__left-buttons button:hover {
+    box-shadow: 0 0 1em rgb(115, 115, 115);
+}
+
+.topbar__menu__right-button:focus,
+.topbar__menu__left-buttons button:focus {
+    outline: none;
+}
+
+.topbar__menu__right-button:active,
+.topbar__menu__left-buttons button:active {
+    -moz-transform: translateY(2%);
+    -ms-transform: translateY(2%);
+    /* IE 9 */
+    -webkit-transform: translateY(2%);
+    /* Chrome, Safari, Opera */
+    transform: translateY(2%);
 }
 
 .first-section {
@@ -120,6 +161,17 @@ button {
     background-image: url('../images/header.png');
     background-size: cover;
     background-position: right;
+    animation-name: animation-on-load;
+    animation-duration: 1s;
+}
+
+@keyframes animation-on-load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .first-section__content {
@@ -144,12 +196,18 @@ button {
     width: 37vw;
 }
 
+.first-section__content a:hover {
+    color: rgb(242, 174, 49);
+}
+
 .second-section {
     width: 100%;
     height: auto;
     padding: 41px;
     box-sizing: border-box;
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(232, 232, 232);
+    animation-name: animation-on-load;
+    animation-duration: 3s;
 }
 
 .second-section__accordion {
@@ -166,7 +224,7 @@ button {
 }
 
 .second-section__accordion hr {
-    background-color: rgb(213, 213, 213);
+    border: 0.5px solid rgb(218, 216, 216);
 }
 
 .second-section__accordion p {
@@ -189,6 +247,36 @@ button {
     transition: max-height 0.2s ease-out;
 }
 
+.opened-panel-arrow {
+    animation-duration: 0.2s;
+    animation-name: rotate-accordion-arrow;
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+@keyframes rotate-accordion-arrow {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -webkit-transform: rotate(0deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        /* IE 9 */
+        -webkit-transform: rotate(180deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+    }
+}
+
 footer {
     width: 100%;
     height: 40px;
@@ -202,6 +290,10 @@ footer {
     .topbar__menu {
         display: none;
     }
+    .topbar__menu-mobile {
+        display: block;
+        position: relative;
+    }
     .topbar {
         display: flex;
         justify-content: space-between;
@@ -213,30 +305,8 @@ footer {
         left: 19px;
         border-bottom-right-radius: none;
         border-radius: 8px;
-    }
-    .topbar__menu-mobile {
-        display: block;
-        position: relative;
-    }
-    .topbar__menu-mobile svg {
-        cursor: pointer;
-        margin-top: 13px;
-        margin-left: 30px;
-        fill: white;
-    }
-    .topbar__menu-mobile__hidden-menu a {
-        text-align: left;
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-    .topbar__menu-mobile__hidden-menu a:hover {
-        background-color: rgb(102, 64, 141);
-    }
-    .topbar__menu-mobile a {
-        text-transform: uppercase;
+        animation-name: animation-on-load;
+        animation-duration: 3s;
     }
     .first-section__content {
         background: none;
@@ -251,11 +321,11 @@ footer {
 }
 
 
-/* FINAL ADJUST ON FIRST CONTENT */
+/* FINAL ADJUST ON MOBILE */
 
 @media only screen and (max-width: 787px) {
     .first-section {
-        background-position: 702px;
+        background-position: 665px;
     }
     .first-section__content {
         width: 100%;
@@ -266,5 +336,11 @@ footer {
     }
     .first-section__content p {
         text-shadow: 1px 1px #949494
+    }
+    .second-section__accordion p {
+        width: 50%;
+    }
+    .second-section__accordion hr {
+        border: none;
     }
 }
